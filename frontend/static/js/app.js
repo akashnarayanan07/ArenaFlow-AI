@@ -123,6 +123,15 @@ document.addEventListener("DOMContentLoaded", () => {
   loadAllFacilities();
   initTicker();
 
+  // Support direct query via URL params (?q=...)
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialQuery = urlParams.get("q");
+  if (initialQuery) {
+    setTimeout(() => {
+      setQuery(initialQuery);
+    }, 350);
+  }
+
   // Enter submits query (Shift+Enter inserts newline)
   const queryInput = document.getElementById("query-input");
   if (queryInput) {
