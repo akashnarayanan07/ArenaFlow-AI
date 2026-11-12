@@ -1,13 +1,13 @@
 <div align="center">
 
-# ⚡ InsightFlow AI — Stadium Intelligence System
+# ⚡ ArenaFlow AI — Stadium Intelligence System
 ### *Intelligent, Explainable Multi-Factor Navigation for Physical Event Arenas*
 
-[![Live Demo](https://img.shields.io/badge/Demo-GitHub%20Pages-00f2fe?style=for-the-badge&logo=github)](https://akashnarayanan07.github.io/InsightFlow-AI/)
+[![Live Demo](https://img.shields.io/badge/Demo-GitHub%20Pages-00f2fe?style=for-the-badge&logo=github)](https://akashnarayanan07.github.io/ArenaFlow-AI/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.1-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![AI Engine](https://img.shields.io/badge/Reasoning-Multi--Factor%20Algorithmic%20%2B%20Claude-00ff88?style=for-the-badge)](https://anthropic.com)
-[![Status](https://img.shields.io/badge/Status-100%25%20Operational-f72585?style=for-the-badge)](https://github.com/akashnarayanan07/InsightFlow-AI)
+[![Status](https://img.shields.io/badge/Status-100%25%20Operational-f72585?style=for-the-badge)](https://github.com/akashnarayanan07/ArenaFlow-AI)
 
 <br/>
 
@@ -170,8 +170,8 @@ $$\text{Optimal Venue } v^* = \arg\min_{v \in V} \text{Score}(v)$$
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/akashnarayanan07/InsightFlow-AI.git
-cd InsightFlow-AI
+git clone https://github.com/akashnarayanan07/ArenaFlow-AI.git
+cd ArenaFlow-AI
 ```
 
 ### 2. Set Up Virtual Environment & Dependencies
@@ -215,11 +215,11 @@ InsightFlow AI is engineered to run seamlessly on **GitHub Pages** with **zero b
 ```powershell
 # 1. Push code to your GitHub repository
 git add .
-git commit -m "Deploy InsightFlow AI"
+git commit -m "Deploy ArenaFlow AI"
 git push origin main
 
 # 2. Enable GitHub Pages using GitHub CLI
-gh api repos/akashnarayanan07/InsightFlow-AI/pages -X POST -F "source[branch]=main" -F "source[path]=/"
+gh api repos/akashnarayanan07/ArenaFlow-AI/pages -X POST -F "source[branch]=main" -F "source[path]=/"
 ```
 
 *Or via GitHub Web Settings:*
@@ -228,7 +228,7 @@ gh api repos/akashnarayanan07/InsightFlow-AI/pages -X POST -F "source[branch]=ma
 3. Click **Save**.
 
 Your live URL will be active at:
-👉 **`https://akashnarayanan07.github.io/InsightFlow-AI/`**
+👉 **`https://akashnarayanan07.github.io/ArenaFlow-AI/`**
 
 ---
 
