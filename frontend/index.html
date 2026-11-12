@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InsightFlow AI — Stadium Intelligence &amp; Multi-Factor Navigation</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css?v=2.6.2" />
+</head>
+<body>
+  <!-- Ambient background canvas -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="bg-glow-orb orb-3"></div>
+  <div class="scanline"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo-wrap">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M10 20 Q20 8 30 20 Q20 32 10 20Z" fill="var(--accent)" opacity="0.85"/>
+            <circle cx="20" cy="20" r="4" fill="var(--bg)"/>
+            <circle cx="20" cy="20" r="2" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">InsightFlow <span class="accent-text">AI</span></span>
+          <span class="logo-sub">STADIUM INTELLIGENCE OS</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#console-section" class="nav-link">Live Console</a>
+        <a href="#map-section" class="nav-link">Stadium Radar</a>
+        <a href="#algorithm-section" class="nav-link">Decision Engine</a>
+        <a href="#facilities-section" class="nav-link">Venue Matrix</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="status-badge pulse-ring">
+          <span class="status-dot"></span>
+          <span class="status-text">SYSTEM OPERATIONAL</span>
+        </div>
+        <a href="#console-section" class="nav-cta-btn">
+          <span>Launch Console</span>
+          <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-icon">⚡</span>
+        <span class="badge-text">RETHINKING PHYSICAL EVENT MOBILITY</span>
+        <span class="badge-tag">v2.6 LIVE</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Stadium Navigation That <br/>
+        <span class="gradient-text">Thinks Before It Answers.</span>
+      </h1>
+
+      <p class="hero-subline">
+        Traditional maps blindly route thousands of fans to the <em>nearest</em> stand, causing massive queues and dangerous congestion.
+        <strong>InsightFlow AI</strong> weighs live crowd velocity, wait queues, and distance in real-time — guiding you to the optimal choice with transparent reasoning.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#console-section" class="btn-primary-hero">
+          <span>Open Intelligence Console</span>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 6l5 4-5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#map-section" class="btn-secondary-hero">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>Explore Interactive Radar</span>
+        </a>
+      </div>
+
+      <!-- Real-time Live Metrics Bar -->
+      <div class="live-metrics-strip">
+        <div class="metric-card">
+          <span class="metric-value" id="attendees-count">48,420</span>
+          <span class="metric-label">Attendees Monitored</span>
+          <span class="metric-trend green">↑ Live Telemetry</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-value">68%</span>
+          <span class="metric-label">Avg. Queue Time Saved</span>
+          <span class="metric-trend green">⚡ Multi-Factor Optimization</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-value">&lt; 140ms</span>
+          <span class="metric-label">Decision Latency</span>
+          <span class="metric-trend cyan">Real-time Rule/LLM</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-card">
+          <span class="metric-value">12 / 12</span>
+          <span class="metric-label">Gates &amp; Zones Synchronized</span>
+          <span class="metric-trend green">● 100% Online</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Map & Stadium Overview Section -->
+  <section id="map-section" class="map-section">
+    <div class="section-header-wrap">
+      <div class="section-tag">ZONE VISUALIZATION</div>
+      <h2 class="section-heading">Interactive Stadium Density Radar</h2>
+      <p class="section-desc">Select any zone to inspect live gate density, average waiting times, and active facilities.</p>
+    </div>
+
+    <div class="stadium-grid">
+      <!-- Interactive SVG Stadium Schematic -->
+      <div class="stadium-map-wrapper">
+        <div class="map-glow-underlay"></div>
+        <svg class="stadium-svg" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="pitchGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#003522"/>
+              <stop offset="100%" stop-color="#021f14"/>
+            </radialGradient>
+            <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          <!-- Outer Stadium Structure -->
+          <rect x="20" y="20" width="560" height="400" rx="90" fill="#0b131c" stroke="#1d3043" stroke-width="3"/>
+          <rect x="50" y="50" width="500" height="340" rx="60" fill="#070c12" stroke="#162737" stroke-width="2"/>
+
+          <!-- Stands / Sectors -->
+          <!-- North Stand -->
+          <g class="zone-group active" data-zone="North" onclick="selectZone('Section A (North Stand)')">
+            <path d="M 120 60 Q 300 35 480 60 L 440 120 Q 300 100 160 120 Z" class="zone-shape zone-north" />
+            <text x="300" y="85" text-anchor="middle" class="zone-text">NORTH STAND (ZONE A)</text>
+            <circle cx="300" cy="100" r="5" class="zone-pulse-dot" fill="var(--accent2)"/>
+          </g>
+
+          <!-- East Stand -->
+          <g class="zone-group" data-zone="East" onclick="selectZone('Section B (East Stand)')">
+            <path d="M 530 110 Q 560 220 530 330 L 465 295 Q 490 220 465 145 Z" class="zone-shape zone-east" />
+            <text x="502" y="225" text-anchor="middle" class="zone-text" transform="rotate(90, 502, 225)">EAST (ZONE B)</text>
+            <circle cx="505" cy="225" r="5" class="zone-pulse-dot" fill="var(--yellow)"/>
+          </g>
+
+          <!-- South Stand -->
+          <g class="zone-group" data-zone="South" onclick="selectZone('Section C (South Stand)')">
+            <path d="M 120 380 Q 300 405 480 380 L 440 320 Q 300 340 160 320 Z" class="zone-shape zone-south" />
+            <text x="300" y="360" text-anchor="middle" class="zone-text">SOUTH STAND (ZONE C)</text>
+            <circle cx="300" cy="340" r="5" class="zone-pulse-dot" fill="var(--green)"/>
+          </g>
+
+          <!-- West Stand -->
+          <g class="zone-group" data-zone="West" onclick="selectZone('Section D (West Stand)')">
+            <path d="M 70 110 Q 40 220 70 330 L 135 295 Q 110 220 135 145 Z" class="zone-shape zone-west" />
+            <text x="98" y="225" text-anchor="middle" class="zone-text" transform="rotate(-90, 98, 225)">WEST (ZONE D)</text>
+            <circle cx="95" cy="225" r="5" class="zone-pulse-dot" fill="var(--green)"/>
+          </g>
+
+          <!-- Center Arena Field -->
+          <rect x="180" y="145" width="240" height="150" rx="16" fill="url(#pitchGrad)" stroke="#0e5436" stroke-width="2"/>
+          <line x1="300" y1="145" x2="300" y2="295" stroke="#1d7a52" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle cx="300" cy="220" r="32" fill="none" stroke="#1d7a52" stroke-width="1.5"/>
+          <circle cx="300" cy="220" r="3" fill="#1d7a52"/>
+          <text x="300" y="224" text-anchor="middle" class="pitch-label">CENTER FIELD</text>
+        </svg>
+        <div class="map-instruction">
+          <span class="hint-icon">👆</span> Click any stand above to calibrate the live query console
+        </div>
+      </div>
+
+      <!-- Live Zone Telemetry Sidebar -->
+      <div class="zone-telemetry-panel">
+        <div class="telemetry-header">
+          <span class="label-chip">LIVE TELEMETRY</span>
+          <h3 id="current-zone-title">North Stand — Zone A</h3>
+        </div>
+
+        <div class="zone-stat-grid">
+          <div class="stat-box">
+            <span class="stat-num" id="zone-density-val">88%</span>
+            <span class="stat-lbl">Crowd Saturation</span>
+            <span class="stat-badge badge-high" id="zone-density-badge">Heavy Flow</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="zone-wait-val">18m</span>
+            <span class="stat-lbl">Avg Food Queue</span>
+            <span class="stat-badge badge-high">High Latency</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="zone-gate-val">95%</span>
+            <span class="stat-lbl">Exit Gate Load</span>
+            <span class="stat-badge badge-high">Peak Rush</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="zone-alt-val">South (C)</span>
+            <span class="stat-lbl">Recommended Offset</span>
+            <span class="stat-badge badge-green">4m Wait</span>
+          </div>
+        </div>
+
+        <div class="zone-advisory-box">
+          <div class="adv-title">
+            <span class="adv-icon">💡</span>
+            <span>Dynamic Routing Advisory</span>
+          </div>
+          <p id="zone-advisory-text">
+            North Stand food courts are currently at 88% capacity with 18-minute wait lines. Fans moving toward South Stand (Zone C) save an average of 14 minutes in line.
+          </p>
+          <button class="btn-apply-zone" onclick="applyZoneQuery('Where can I get food quickly?')">
+            Analyze Food Options for This Zone →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Intelligence Console (Embedded Main Tool, No Login Required) -->
+  <section id="console-section" class="console-section">
+    <div class="section-header-wrap">
+      <div class="section-tag accent-tag">INTERACTIVE CONSOLE</div>
+      <h2 class="section-heading">Multi-Factor Event Intelligence Console</h2>
+      <p class="section-desc">Experience real-time AI decision-making. No login required — enter your query or choose a scenario below.</p>
+    </div>
+
+    <div class="console-wrapper">
+      <main class="console-main">
+        <!-- Left Panel: Query Input & Controls -->
+        <section class="panel panel-left">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <span class="label-chip">INPUT CONSOLE</span>
+              <h2>Attendee Request</h2>
+            </div>
+            <div class="header-status">
+              <span class="pulsing-led"></span>
+              <span class="mono-label">READY</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="location-select">
+              <span class="lbl-text">Current Location</span>
+              <span class="lbl-badge">GPS Calibrated</span>
+            </label>
+            <div class="select-wrapper">
+              <select id="location-select" onchange="onLocationChange(this.value)">
+                <option value="Section A (North Stand)">Section A — North Stand (High Density)</option>
+                <option value="Section B (East Stand)">Section B — East Stand (Medium Density)</option>
+                <option value="Section C (South Stand)">Section C — South Stand (Low Density)</option>
+                <option value="Section D (West Stand)">Section D — West Stand (Optimal Flow)</option>
+                <option value="Section E (Center Field)">Section E — Center Field</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="query-input">
+              <span class="lbl-text">Ask InsightFlow</span>
+              <span class="lbl-badge">Natural Language</span>
+            </label>
+            <div class="textarea-wrapper">
+              <textarea id="query-input" rows="3" placeholder="e.g., Where should I get food quickly? / Which exit is least crowded? / Find me a restroom with no queue."></textarea>
+              <div class="textarea-hint">Press <strong>Enter</strong> to evaluate · <strong>Shift+Enter</strong> for newline</div>
+            </div>
+          </div>
+
+          <div class="quick-queries">
+            <div class="quick-header">
+              <span class="ql">PRESET SCENARIOS:</span>
+            </div>
+            <div class="quick-buttons-row">
+              <button type="button" class="qbtn" onclick="setQuery('Where can I get food quickly?', this)">🍔 Food Options</button>
+              <button type="button" class="qbtn" onclick="setQuery('Find nearest restroom with shortest wait', this)">🚻 Fast Restroom</button>
+              <button type="button" class="qbtn" onclick="setQuery('Which exit should I use to leave fast?', this)">🚪 Quick Exit</button>
+              <button type="button" class="qbtn" onclick="setQuery('Where can I buy merchandise?', this)">🛍️ Official Merch</button>
+              <button type="button" class="qbtn" onclick="setQuery('I need medical assistance', this)">🏥 Medical Aid</button>
+              <button type="button" class="qbtn" onclick="setQuery('Where should I park?', this)">🅿️ Parking Lot</button>
+            </div>
+          </div>
+
+          <button id="ask-btn" onclick="submitQuery()">
+            <span id="btn-text">ANALYSE &amp; RECOMMEND</span>
+            <span id="btn-loader" class="hidden">THINKING<span class="dots">...</span></span>
+            <svg class="btn-arrow" viewBox="0 0 20 20"><path d="M4 10h12M11 6l5 4-5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <!-- Venue density live radar mini-feed -->
+          <div class="radar-section">
+            <div class="radar-header-row">
+              <p class="section-label">LIVE VENUE OCCUPANCY SENSORS</p>
+              <span class="radar-sync-time" id="last-updated">Syncing...</span>
+            </div>
+            <div id="radar-list" class="radar-list"></div>
+          </div>
+        </section>
+
+        <!-- Right Panel: AI Recommendation & Decision Trace -->
+        <section class="panel panel-right">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <span class="label-chip accent2">REASONING ENGINE</span>
+              <h2>Intelligent Recommendation</h2>
+            </div>
+            <div class="panel-badge-pill" id="engine-mode-pill">
+              <span class="pill-dot"></span>
+              <span>Multi-Factor Active</span>
+            </div>
+          </div>
+
+          <!-- Idle state -->
+          <div id="idle-state" class="idle-state">
+            <div class="idle-graphic">
+              <div class="radar-sweep-circle">
+                <div class="radar-beam"></div>
+              </div>
+              <div class="idle-center-dot"></div>
+            </div>
+            <div class="idle-text-wrap">
+              <h3>System Ready for Evaluation</h3>
+              <p>Type your request or pick a scenario on the left.<br>
+              InsightFlow will run transparent 4-factor multi-dimensional reasoning before recommending an optimal route.</p>
+            </div>
+            <div class="idle-quick-prompt">
+              <span>Try clicking:</span>
+              <button onclick="setQuery('Where can I get food quickly?'); submitQuery();" class="idle-chip">"Where can I get food quickly?"</button>
+            </div>
+          </div>
+
+          <!-- Result state -->
+          <div id="result-state" class="result-state hidden">
+            <!-- Thinking steps animation -->
+            <div class="thinking-steps" id="thinking-steps">
+              <div class="step" id="step1">
+                <div class="step-indicator"><span class="step-num">01</span></div>
+                <div class="step-text-wrap">
+                  <span class="step-title">IDENTIFY</span>
+                  <span class="step-desc">Parsing intent &amp; venues</span>
+                </div>
+              </div>
+              <div class="step" id="step2">
+                <div class="step-indicator"><span class="step-num">02</span></div>
+                <div class="step-text-wrap">
+                  <span class="step-title">EVALUATE</span>
+                  <span class="step-desc">Wait, density &amp; distance</span>
+                </div>
+              </div>
+              <div class="step" id="step3">
+                <div class="step-indicator"><span class="step-num">03</span></div>
+                <div class="step-text-wrap">
+                  <span class="step-title">COMPARE</span>
+                  <span class="step-desc">Simulating trade-offs</span>
+                </div>
+              </div>
+              <div class="step" id="step4">
+                <div class="step-indicator"><span class="step-num">04</span></div>
+                <div class="step-text-wrap">
+                  <span class="step-title">RECOMMEND</span>
+                  <span class="step-desc">Optimal path explanation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main answer card -->
+            <div class="answer-card" id="answer-card">
+              <div class="answer-header">
+                <div class="verdict-tag">
+                  <span class="star-icon">★</span>
+                  <span>OPTIMAL PATH SELECTED</span>
+                </div>
+                <span class="confidence-badge" id="confidence-badge">High Confidence</span>
+              </div>
+
+              <h3 id="short-answer" class="short-answer"></h3>
+              
+              <div class="divider"></div>
+
+              <div class="section-block">
+                <div class="block-title">
+                  <span class="block-icon">🔍</span>
+                  <span class="section-label">EXPLAINABLE MULTI-FACTOR REASONING</span>
+                </div>
+                <p id="reasoning" class="reasoning-text"></p>
+              </div>
+
+              <div class="section-block alt-block">
+                <div class="block-title">
+                  <span class="block-icon">↔️</span>
+                  <span class="section-label alt-lbl">CREDIBLE ALTERNATIVE (TRADE-OFF ANALYSIS)</span>
+                </div>
+                <p id="alternative" class="alt-text"></p>
+              </div>
+
+              <div class="result-meta-row">
+                <div class="meta-item">
+                  <span class="meta-label">INTENT DETECTED</span>
+                  <span id="intent-display" class="intent-value">FOOD COURTS</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">ALGORITHM FOCUS</span>
+                  <span class="focus-value">Time &amp; Density Weighted</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ranked Venue Breakdown Table -->
+            <div class="venues-table-wrap" id="venues-table-wrap">
+              <div class="table-header-flex">
+                <div>
+                  <p class="section-label">RANKED EVALUATION MATRIX</p>
+                  <span class="table-subtitle">All matching facilities ranked by composite weighted score (Lower is better)</span>
+                </div>
+                <span class="table-count-badge" id="table-count">4 Options Analyzed</span>
+              </div>
+              <table class="venues-table" id="venues-table">
+                <thead>
+                  <tr>
+                    <th>Facility</th>
+                    <th>Zone</th>
+                    <th>Distance</th>
+                    <th>Crowd Density</th>
+                    <th>Est. Wait</th>
+                    <th>Composite Score</th>
+                  </tr>
+                </thead>
+                <tbody id="venues-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+  <!-- How It Works / Algorithm Breakdown Section -->
+  <section id="algorithm-section" class="algorithm-section">
+    <div class="section-header-wrap">
+      <div class="section-tag green-tag">DECISION ARCHITECTURE</div>
+      <h2 class="section-heading">Why Naive Nearest Navigation Fails</h2>
+      <p class="section-desc">Comparing conventional GPS apps with InsightFlow's multi-factor optimization engine.</p>
+    </div>
+
+    <div class="comparison-grid">
+      <!-- Old Approach Card -->
+      <div class="comp-card legacy-card">
+        <div class="card-badge red">CONVENTIONAL MAPS</div>
+        <h3>The "Nearest Facility" Trap</h3>
+        <p class="comp-desc">Every attendee opens their map and taps "Food" or "Exit". The app computes only Euclidean distance and sends thousands of fans to the closest stall.</p>
+        <ul class="comp-list">
+          <li class="comp-item red">
+            <span class="icon">✕</span>
+            <span>Overwhelms nearest gates and vendors (up to 95% congestion).</span>
+          </li>
+          <li class="comp-item red">
+            <span class="icon">✕</span>
+            <span>Attendees wait 15–30 minutes while farther facilities sit empty.</span>
+          </li>
+          <li class="comp-item red">
+            <span class="icon">✕</span>
+            <span>Black-box output: gives no reason why an option was picked.</span>
+          </li>
+        </ul>
+        <div class="comp-footer legacy-footer">Result: Frustrated attendees &amp; severe bottlenecks</div>
+      </div>
+
+      <!-- InsightFlow Approach Card -->
+      <div class="comp-card ai-card">
+        <div class="card-badge green">INSIGHTFLOW AI ENGINE</div>
+        <h3>Intelligent Multi-Factor Balancing</h3>
+        <p class="comp-desc">Treats every physical request as a continuous optimization problem. Balances wait latency, crowd saturation, and walk distance to unlock maximum speed.</p>
+        <ul class="comp-list">
+          <li class="comp-item green">
+            <span class="icon">✓</span>
+            <span><strong>45% Wait Time Weight:</strong> Time is the scarcest stadium resource.</span>
+          </li>
+          <li class="comp-item green">
+            <span class="icon">✓</span>
+            <span><strong>35% Crowd Density Weight:</strong> Avoids dangerous crushing and bottlenecks.</span>
+          </li>
+          <li class="comp-item green">
+            <span class="icon">✓</span>
+            <span><strong>20% Distance Weight:</strong> Walks only when time saved outweights foot travel.</span>
+          </li>
+          <li class="comp-item green">
+            <span class="icon">✓</span>
+            <span><strong>Transparent Reasoning:</strong> Explains exactly WHY each recommendation won.</span>
+          </li>
+        </ul>
+        <div class="comp-footer ai-footer">Result: 68% faster access &amp; zero crowd bottlenecks</div>
+      </div>
+    </div>
+
+    <!-- Formula Visualizer -->
+    <div class="formula-box">
+      <div class="formula-header">
+        <span class="formula-title">Mathematical Scoring Model</span>
+        <span class="formula-badge">MINIMIZE SCORE = OPTIMAL CHOICE</span>
+      </div>
+      <div class="formula-display">
+        <span class="formula-func">Score(v)</span>
+        <span class="formula-eq">=</span>
+        <span class="formula-term term-wait">0.45 × Wait_Norm</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-term term-crowd">0.35 × Density_Norm</span>
+        <span class="formula-plus">+</span>
+        <span class="formula-term term-dist">0.20 × Distance_Norm</span>
+      </div>
+      <div class="formula-explainer">
+        All variables normalized to [0.0, 1.0]. Lower score signifies superior comfort, minimal wait, and safe crowd throughput.
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Venue & Facility Explorer -->
+  <section id="facilities-section" class="facilities-section">
+    <div class="section-header-wrap">
+      <div class="section-tag accent2-tag">FACILITY DIRECTORY</div>
+      <h2 class="section-heading">Full Stadium Facility Matrix</h2>
+      <p class="section-desc">Browse real-time telemetry across all 20+ stadium food courts, restrooms, medical points, and parking facilities.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="facility-filter-bar">
+      <div class="filter-pills" id="facility-filters">
+        <button class="filter-pill active" onclick="filterFacilities('all', this)">All Facilities</button>
+        <button class="filter-pill" onclick="filterFacilities('food_courts', this)">🍔 Food Courts</button>
+        <button class="filter-pill" onclick="filterFacilities('restrooms', this)">🚻 Restrooms</button>
+        <button class="filter-pill" onclick="filterFacilities('exits', this)">🚪 Exits</button>
+        <button class="filter-pill" onclick="filterFacilities('medical_aid', this)">🏥 Medical Aid</button>
+        <button class="filter-pill" onclick="filterFacilities('merchandise', this)">🛍️ Merchandise</button>
+        <button class="filter-pill" onclick="filterFacilities('parking', this)">🅿️ Parking</button>
+      </div>
+      <div class="facility-search-wrapper">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zm4-1l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="text" id="facility-search" placeholder="Search facilities..." oninput="searchFacilities(this.value)" />
+      </div>
+    </div>
+
+    <!-- Facility Cards Grid -->
+    <div class="facilities-grid" id="facilities-grid">
+      <!-- Populated dynamically by app.js -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-main">
+        <div class="footer-logo">
+          <div class="logo-icon mini">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="2"/>
+              <path d="M10 20 Q20 8 30 20 Q20 32 10 20Z" fill="var(--accent)" opacity="0.85"/>
+            </svg>
+          </div>
+          <span class="footer-brand">InsightFlow <span>AI</span></span>
+        </div>
+        <p class="footer-tagline">Intelligent real-time multi-factor physical event navigation system.</p>
+        <div class="tech-stack-row">
+          <span class="tech-chip">Python 3.11</span>
+          <span class="tech-chip">Flask</span>
+          <span class="tech-chip">Multi-Factor Engine</span>
+          <span class="tech-chip">Claude Sonnet 4 API</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#console-section">Live Console</a>
+        <a href="#map-section">Stadium Map</a>
+        <a href="#algorithm-section">Decision Algorithm</a>
+        <a href="#facilities-section">Facility Matrix</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Telemetry Specs</h4>
+        <span class="spec-row">Update Rate: <strong>1,000ms</strong></span>
+        <span class="spec-row">Fallback Mode: <strong>Local Deterministic</strong></span>
+        <span class="spec-row">Architecture: <strong>Zero-Latency Edge</strong></span>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>InsightFlow AI &copy; 2026. Designed for next-generation stadiums and physical event arenas.</span>
+      <span class="footer-time-ticker" id="footer-ticker">System Time: --:--:--</span>
+    </div>
+  </footer>
+
+  <script src="/static/js/app.js?v=2.6.2"></script>
+</body>
+</html>

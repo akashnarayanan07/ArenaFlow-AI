@@ -1,0 +1,87 @@
+{
+  "venues": {
+    "food_courts": [
+      {
+        "id": "FC-A",
+        "name": "Food Court A",
+        "zone": "North",
+        "distance_from_center_m": 120,
+        "crowd_density": "high",
+        "crowd_percent": 88,
+        "wait_time_min": 18,
+        "capacity": 200,
+        "current_occupancy": 176,
+        "items": ["Burgers", "Pizza", "Sandwiches"]
+      },
+      {
+        "id": "FC-B",
+        "name": "Food Court B",
+        "zone": "East",
+        "distance_from_center_m": 210,
+        "crowd_density": "medium",
+        "crowd_percent": 55,
+        "wait_time_min": 8,
+        "capacity": 150,
+        "current_occupancy": 82,
+        "items": ["Tacos", "Wraps", "Noodles"]
+      },
+      {
+        "id": "FC-C",
+        "name": "Food Court C",
+        "zone": "South",
+        "distance_from_center_m": 180,
+        "crowd_density": "low",
+        "crowd_percent": 30,
+        "wait_time_min": 4,
+        "capacity": 180,
+        "current_occupancy": 54,
+        "items": ["Grilled Items", "Salads", "Beverages"]
+      },
+      {
+        "id": "FC-D",
+        "name": "Food Court D",
+        "zone": "West",
+        "distance_from_center_m": 300,
+        "crowd_density": "low",
+        "crowd_percent": 20,
+        "wait_time_min": 2,
+        "capacity": 120,
+        "current_occupancy": 24,
+        "items": ["Desserts", "Ice Cream", "Snacks"]
+      }
+    ],
+    "restrooms": [
+      { "id": "WC-N1", "name": "Restroom N1", "zone": "North", "distance_from_center_m": 90, "crowd_density": "high", "wait_time_min": 10, "crowd_percent": 90 },
+      { "id": "WC-N2", "name": "Restroom N2", "zone": "North Upper", "distance_from_center_m": 140, "crowd_density": "medium", "wait_time_min": 4, "crowd_percent": 50 },
+      { "id": "WC-E1", "name": "Restroom E1", "zone": "East", "distance_from_center_m": 200, "crowd_density": "low", "wait_time_min": 1, "crowd_percent": 15 },
+      { "id": "WC-S1", "name": "Restroom S1", "zone": "South", "distance_from_center_m": 160, "crowd_density": "low", "wait_time_min": 2, "crowd_percent": 25 }
+    ],
+    "exits": [
+      { "id": "EX-N", "name": "North Exit", "zone": "North", "distance_from_center_m": 350, "crowd_density": "very_high", "wait_time_min": 20, "crowd_percent": 95 },
+      { "id": "EX-E", "name": "East Exit", "zone": "East", "distance_from_center_m": 390, "crowd_density": "medium", "wait_time_min": 7, "crowd_percent": 55 },
+      { "id": "EX-S", "name": "South Exit", "zone": "South", "distance_from_center_m": 420, "crowd_density": "low", "wait_time_min": 3, "crowd_percent": 30 },
+      { "id": "EX-W", "name": "West Exit", "zone": "West", "distance_from_center_m": 370, "crowd_density": "low", "wait_time_min": 2, "crowd_percent": 20 }
+    ],
+    "medical_aid": [
+      { "id": "MD-1", "name": "Medical Aid Station 1", "zone": "North", "distance_from_center_m": 100, "crowd_density": "low", "wait_time_min": 1, "crowd_percent": 10 },
+      { "id": "MD-2", "name": "Medical Aid Station 2", "zone": "South", "distance_from_center_m": 220, "crowd_density": "low", "wait_time_min": 0, "crowd_percent": 5 }
+    ],
+    "merchandise": [
+      { "id": "MR-A", "name": "Merchandise Store A", "zone": "North", "distance_from_center_m": 130, "crowd_density": "very_high", "wait_time_min": 25, "crowd_percent": 95 },
+      { "id": "MR-B", "name": "Merchandise Store B", "zone": "East", "distance_from_center_m": 250, "crowd_density": "medium", "wait_time_min": 10, "crowd_percent": 60 },
+      { "id": "MR-C", "name": "Merchandise Store C", "zone": "West", "distance_from_center_m": 310, "crowd_density": "low", "wait_time_min": 3, "crowd_percent": 25 }
+    ],
+    "parking": [
+      { "id": "PK-N", "name": "North Parking", "zone": "North", "distance_from_center_m": 500, "crowd_density": "high", "wait_time_min": 30, "crowd_percent": 85 },
+      { "id": "PK-E", "name": "East Parking", "zone": "East", "distance_from_center_m": 480, "crowd_density": "medium", "wait_time_min": 15, "crowd_percent": 60 },
+      { "id": "PK-W", "name": "West Parking", "zone": "West", "distance_from_center_m": 520, "crowd_density": "low", "wait_time_min": 5, "crowd_percent": 30 }
+    ]
+  },
+  "user_locations": [
+    { "id": "SEC-A", "name": "Section A (North Stand)", "zone": "North", "x": 50, "y": 10 },
+    { "id": "SEC-B", "name": "Section B (East Stand)", "zone": "East", "x": 90, "y": 50 },
+    { "id": "SEC-C", "name": "Section C (South Stand)", "zone": "South", "x": 50, "y": 90 },
+    { "id": "SEC-D", "name": "Section D (West Stand)", "zone": "West", "x": 10, "y": 50 },
+    { "id": "SEC-E", "name": "Section E (Center Field)", "zone": "Center", "x": 50, "y": 50 }
+  ]
+}
